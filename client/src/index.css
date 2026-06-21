@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "JameelNoori";
+  src: url("./assets/fonts/Jameel\ Noori\ Nastaleeq\ Regular.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "JameelNooriKasheeda";
+  src: url("./assets/fonts/Jameel\ Noori\ Nastaleeq\ Kasheeda.ttf")
+    format("truetype");
+}
+
+@theme {
+  --font-regular: "JameelNoori", serif;
+  --font-kasheeda: "JameelNooriKasheeda", serif;
+}
