@@ -21,7 +21,7 @@ const Navbar = () => {
     return (
         <nav className="w-full bg-white shadow-md sticky top-0 z-50">
             {/* Header Section with Background Design */}
-            <div className="relative overflow-hidden md:py-8 bg-linear-to-b from-gray-50 to-white border-b border-gray-200">
+            <div className="relative overflow-hidden md:py-8 bg-red-700">
 
                 {/* Subtle Decorative Elements */}
                 <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-red-50 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
@@ -34,7 +34,7 @@ const Navbar = () => {
                         <div className="md:hidden w-10"></div>
 
                         {/* Tagline for desktop */}
-                        <div className="hidden md:block text-sm text-gray-400 font-medium italic border-l-2 border-red-600 pl-3">
+                        <div className="hidden font-kasheeda md:block text-xl text-white font-medium italic border-l-2 border-red-600 pl-3">
                             جدید دور کا ترجمان
                         </div>
                     </div>
@@ -42,7 +42,7 @@ const Navbar = () => {
                     {/* Website Name - Centered */}
                     <div className="flex-2 text-center">
 
-                        <h1 className="text-3xl md:text-6xl font-regular text-red-600 hover:scale-105 transition-transform duration-300 cursor-pointer drop-shadow-sm select-none">
+                        <h1 className="text-3xl md:text-6xl font-regular text-white hover:scale-105 transition-transform duration-300 cursor-pointer drop-shadow-sm select-none">
                             ہائی پاک
                         </h1>
                     </div>
@@ -58,12 +58,12 @@ const Navbar = () => {
                         </button>
 
                         {/* Desktop Date with Status Indicator */}
-                        <div className="hidden md:flex items-center gap-2 text-sm text-gray-500 font-medium text-right">
+                        <div className="hidden md:flex items-center font-kasheeda gap-2 text-xl text-white font-medium text-right">
+                            {new Date().toLocaleDateString('ur-PK', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
                             <span className="flex h-2 w-2 relative">
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                                <span className="relative inline-flex rounded-full h-2 w-2 bg-red-600"></span>
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
                             </span>
-                            {new Date().toLocaleDateString('ur-PK', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
                         </div>
                     </div>
                 </div>
