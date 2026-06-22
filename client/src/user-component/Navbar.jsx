@@ -21,11 +21,8 @@ const Navbar = () => {
     return (
         <nav className="w-full bg-white shadow-md sticky top-0 z-50">
             {/* Header Section with Background Design */}
-            <div className="relative overflow-hidden md:py-8 bg-red-700">
+            <div className="relative overflow-hidden md:py-8 bg-[#dd3333]">
 
-                {/* Subtle Decorative Elements */}
-                <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-red-50 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
-                <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-gray-100 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
 
                 <div className="container mx-auto px-4 flex items-center justify-between py-1 md:py-6 transition-all duration-300 relative z-10">
                     {/* Left Section (Balanced for centering on mobile) */}
