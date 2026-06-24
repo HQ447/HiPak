@@ -1,12 +1,8 @@
 import React from 'react'
+import newsData from '../assets/data/newsData.json';
 
 function FloatingBar() {
-    const news = [
-        "پٹرول کی قیمت میں ستر روپے کی کمی",
-        "پاکستان اور انگلینڈ کے درمیان ٹیسٹ سیریز کا آغاز",
-        "عالمی منڈی میں سونے کی قیمتوں میں بڑا اضافہ",
-        "شوبز ستارے سماجی کاموں میں پیش پیش",
-    ];
+    const news = newsData.map(item => item.title);
 
     return (
         <div className='px-4 md:px-20 my-4 select-none'>
