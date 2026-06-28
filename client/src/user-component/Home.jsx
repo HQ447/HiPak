@@ -30,14 +30,40 @@ const Home = () => {
     const showbizNews = news.filter((item) => item.category === 'showbiz').sort((a, b) => parseUrduDate(b.date) - parseUrduDate(a.date)).slice(0, 3);
     const entertainmentNews = news.filter((item) => item.category === 'entertainment').sort((a, b) => parseUrduDate(b.date) - parseUrduDate(a.date)).slice(0, 3);
 
+    console.log(DailyLatestNews)
     return (
-        <div className="home">
-            <h1>Home j</h1>
-            <div>
+        <div className="home flex flex-col gap-3">
+            <div className="cover-news ">
                 {coverNews.map((item) => (
-                    <div key={item.id}>
-                        <h2>{item.title}</h2>
-                        <p>{item.date}</p>
+                    <div key={item.id} className='relative'>
+                        <h2 className='bg-black py-3 md:py-5 px-3 text-white text-right font-kasheeda text-3xl md:text-5xl'>{item.title}</h2>
+                        <img src={item.img} alt="" className='w-full h-full md:h-120 mt-6' />
+                        <h1 className='text-right font-regular bg-black text-white py-1 md:py-3 px-3 w-fit absolute bottom-0 left-0'>{item.date}</h1>
+                    </div>
+                ))}
+            </div>
+            <br />
+            <div className="dailyNews flex gap-3 justify-end flex-wrap ">
+                {DailyLatestNews.map((item) => (
+                    <div key={item.id} className=' grow basis-[264px] flex flex-col gap-3'>
+                        <img className='w-full  ' src="https://plus.unsplash.com/premium_photo-1690958385472-b8e011570ceb?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+                        <h1 className='font-kasheeda text-2xl md:text-2xl text-end'>{item.title}</h1>
+                    </div>
+                ))}
+            </div>
+
+            <div className="showbizNews flex flex-col gap-3  ">
+
+                <h2 className='bg-black py-3 md:py-5 px-3 text-white text-right font-kasheeda text-2xl md:text-3xl'> شوبز کی دنیا</h2>
+                {showbizNews.map((item) => (
+                    <div key={item.id} className=' flex flex-col flex-col-reverse md:flex-row gap-3 w-full '>
+                        <div className="flex flex-col gap-3 w-full ">
+                            <h1 className='font-kasheeda text-2xl md:text-3xl text-end'>{item.title}</h1>
+                            <p className='text-end font-kasheeda text-xl line-clamp-2 text-gray-900'>{item.details}</p>
+                            <p className='text-end font-regular'>{item.date}</p>
+
+                        </div>
+                        <img className='md:w-50 md:h-50 w-full h-full  ' src="https://plus.unsplash.com/premium_photo-1690958385472-b8e011570ceb?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
                     </div>
                 ))}
             </div>

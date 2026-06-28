@@ -16,7 +16,7 @@ const Layout = () => {
 
 
                 {/* right section */}
-                <div className="right col-span-2 bg-amber-500 order-1 md:order-2">
+                <div className="right col-span-2 order-1 md:order-2">
                     <Outlet />
                 </div>
 
