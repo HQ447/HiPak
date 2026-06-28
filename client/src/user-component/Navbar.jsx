@@ -19,7 +19,7 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className="w-full bg-white shadow-md sticky top-0 z-50">
+        <nav className="w-full bg-white shadow-md ">
             {/* Header Section with Background Design */}
             <div className="relative overflow-hidden md:py-8 bg-[#dd3333]">
 
