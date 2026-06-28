@@ -1,41 +1,75 @@
 import React from 'react';
 import columns from '../assets/data/colData.json'
+import news from '../assets/data/newsData.json'
+
+const parseUrduDate = (dateStr) => {
+    if (!dateStr) return new Date(0);
+    const months = {
+        'جنوری': 0, 'فروری': 1, 'مارچ': 2, 'اپریل': 3, 'مئی': 4, 'جون': 5,
+        'جولائی': 6, 'اگست': 7, 'ستمبر': 8, 'اکتوبر': 9, 'نومبر': 10, 'دسمبر': 11
+    };
+    const parts = dateStr.trim().split(/\s+/);
+    if (parts.length === 3) {
+        const day = parseInt(parts[0], 10);
+        const monthName = parts[1];
+        const year = parseInt(parts[2], 10);
+        const month = months[monthName] !== undefined ? months[monthName] : 0;
+        return new Date(year, month, day);
+    }
+    return new Date(0);
+};
 
 const Home = () => {
+    const DailyLatestNews = news
+        .filter((item) => item.category === 'DailyNews' && item.date && item.cover === false)
+        .sort((a, b) => parseUrduDate(b.date) - parseUrduDate(a.date));
+    const coverNews = news.filter((item) => item.cover);
+    const technologyNews = news.filter((item) => item.category === 'technology').sort((a, b) => parseUrduDate(b.date) - parseUrduDate(a.date)).slice(0, 3);
+    const sportsNews = news.filter((item) => item.category === 'sports').sort((a, b) => parseUrduDate(b.date) - parseUrduDate(a.date)).slice(0, 3);
+    const internationalNews = news.filter((item) => item.category === 'international').sort((a, b) => parseUrduDate(b.date) - parseUrduDate(a.date)).slice(0, 3);
+    const showbizNews = news.filter((item) => item.category === 'showbiz').sort((a, b) => parseUrduDate(b.date) - parseUrduDate(a.date)).slice(0, 3);
+    const entertainmentNews = news.filter((item) => item.category === 'entertainment').sort((a, b) => parseUrduDate(b.date) - parseUrduDate(a.date)).slice(0, 3);
+
+    console.log(DailyLatestNews)
     return (
-        <div className="home">
-
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-5 px-5 sm:px-10 md:px-20'>
-
-
-                {/* right section */}
-                <div className="right col-span-2 bg-amber-500 order-1 md:order-2">Ahmad</div>
-
-
-
-
-                {/* columns (left) section */}
-                <div className="left  order-2 md:order-1 flex flex-col gap-5">
-                    <h1 className='font-kasheeda text-4xl text-right bg-gray-200 p-5'>آج کے کالمز</h1>
-                    {columns.map((col) => (
-                        <div key={col.id} className="col gap-4 text-2xl flex justify-end items-center text-right font-regular">
-                            <div className='flex flex-col justify-end'>
-                                <h2 className="title">{col.title}</h2>
-                                <span className="author ">{col.author}</span>
-                            </div>
-                            <img src={col.image} alt="" className='w-20 h-20' />
-                        </div>
-                    ))}
-
-                </div>
-
-
-
-
-
-
-
+        <div className="home flex flex-col gap-3">
+            <div className="cover-news ">
+                {coverNews.map((item) => (
+                    <div key={item.id} className='relative'>
+                        <h2 className='bg-black py-3 md:py-5 px-3 text-white text-right font-kasheeda text-3xl md:text-5xl'>{item.title}</h2>
+                        <img src={item.img} alt="" className='w-full h-full md:h-120 mt-6' />
+                        <h1 className='text-right font-regular bg-black text-white py-1 md:py-3 px-3 w-fit absolute bottom-0 left-0'>{item.date}</h1>
+                    </div>
+                ))}
             </div>
+            <br />
+            <div className="dailyNews flex gap-3 justify-end flex-wrap ">
+                {DailyLatestNews.map((item) => (
+                    <div key={item.id} className=' grow basis-[264px] flex flex-col gap-3'>
+                        <img className='w-full  ' src="https://plus.unsplash.com/premium_photo-1690958385472-b8e011570ceb?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+                        <h1 className='font-kasheeda text-2xl md:text-2xl text-end'>{item.title}</h1>
+                    </div>
+                ))}
+            </div>
+
+            <div className="showbizNews flex flex-col gap-3  ">
+
+                <h2 className='bg-black py-3 md:py-5 px-3 text-white text-right font-kasheeda text-2xl md:text-3xl'> شوبز کی دنیا</h2>
+                {showbizNews.map((item) => (
+                    <div key={item.id} className=' flex flex-col flex-col-reverse md:flex-row gap-3 w-full '>
+                        <div className="flex flex-col gap-3 w-full ">
+                            <h1 className='font-kasheeda text-2xl md:text-3xl text-end'>{item.title}</h1>
+                            <p className='text-end font-kasheeda text-xl line-clamp-2 text-gray-900'>{item.details}</p>
+                            <p className='text-end font-regular'>{item.date}</p>
+
+                        </div>
+                        <img className='md:w-50 md:h-50 w-full h-full  ' src="https://plus.unsplash.com/premium_photo-1690958385472-b8e011570ceb?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+                    </div>
+                ))}
+            </div>
+            <h1 className='my-20'>Technology Nes</h1>
+
+
         </div>
     );
 };

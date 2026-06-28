@@ -7,6 +7,7 @@ import AdminLayout from './admin-dashboard-component/Layout';
 import Analytics from './admin-dashboard-component/Analytics';
 import Contact from './user-component/Contact';
 import Home from './user-component/Home';
+import News from './user-component/News';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/" element={<Layout />} >
           <Route index element={<Home />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/news" element={<News />} />
         </Route>
 
         <Route path="/login" element={<Login />} />
