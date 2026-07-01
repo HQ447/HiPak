@@ -5,7 +5,7 @@ function FloatingBar() {
     const news = newsData.map(item => item.title);
 
     return (
-        <div className='px-4 md:px-20 my-4 select-none'>
+        <div className='md:mx-20 sm:mx-10 mx-2 md:my-8 my-4 select-none '>
             <div className='bg-gray-100 flex items-center h-14 relative overflow-hidden rounded-md border border-gray-200 shadow-xs'>
                 {/* Label Section (Fixed on the right) */}
                 <div className='bg-red-600 text-white h-full flex items-center px-6 font-regular text-xl absolute right-0 z-20 shadow-[-5px_0_15px_rgba(0,0,0,0.1)]'>
