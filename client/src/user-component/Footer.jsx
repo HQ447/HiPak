@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube, FaArrowUp, FaEnvelope } from 'react-icons/fa';
 
 const Footer = () => {
@@ -44,10 +45,10 @@ const Footer = () => {
                     </h3>
                     <ul className="flex flex-col gap-3 mt-2 text-base font-regular">
                         <li>
-                            <a href="#" className="hover:text-white hover:mr-2 transition-all duration-300 text-gray-400">تازہ ترین خبریں</a>
+                            <Link to="/category/DailyNews" className="hover:text-white hover:mr-2 transition-all duration-300 text-gray-400">تازہ ترین خبریں</Link>
                         </li>
                         <li>
-                            <a href="#" className="hover:text-white hover:mr-2 transition-all duration-300 text-gray-400">آج کے کالمز</a>
+                            <Link to="/" className="hover:text-white hover:mr-2 transition-all duration-300 text-gray-400">آج کے کالمز</Link>
                         </li>
                         <li>
                             <a href="#" className="hover:text-white hover:mr-2 transition-all duration-300 text-gray-400">ہمارے بارے میں</a>
@@ -68,19 +69,19 @@ const Footer = () => {
                     </h3>
                     <ul className="flex flex-col gap-3 mt-2 text-base font-regular">
                         <li>
-                            <a href="#" className="hover:text-white hover:mr-2 transition-all duration-300 text-gray-400">ٹیکنالوجی</a>
+                            <Link to="/category/technology" className="hover:text-white hover:mr-2 transition-all duration-300 text-gray-400">ٹیکنالوجی</Link>
                         </li>
                         <li>
-                            <a href="#" className="hover:text-white hover:mr-2 transition-all duration-300 text-gray-400">کھیل کی دنیا</a>
+                            <Link to="/category/sports" className="hover:text-white hover:mr-2 transition-all duration-300 text-gray-400">کھیل کی دنیا</Link>
                         </li>
                         <li>
-                            <a href="#" className="hover:text-white hover:mr-2 transition-all duration-300 text-gray-400">شوبز اور سینما</a>
+                            <Link to="/category/showbiz" className="hover:text-white hover:mr-2 transition-all duration-300 text-gray-400">شوبز اور سینما</Link>
                         </li>
                         <li>
-                            <a href="#" className="hover:text-white hover:mr-2 transition-all duration-300 text-gray-400">بین الاقوامی خبریں</a>
+                            <Link to="/category/international" className="hover:text-white hover:mr-2 transition-all duration-300 text-gray-400">بین الاقوامی خبریں</Link>
                         </li>
                         <li>
-                            <a href="#" className="hover:text-white hover:mr-2 transition-all duration-300 text-gray-400">بلاگز اور تبصرے</a>
+                            <Link to="/category/entertainment" className="hover:text-white hover:mr-2 transition-all duration-300 text-gray-400">بلاگز اور تبصرے</Link>
                         </li>
                     </ul>
                 </div>
