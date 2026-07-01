@@ -40,9 +40,9 @@ const Navbar = () => {
                     {/* Website Name - Centered */}
                     <div className="flex-2 text-center">
 
-                        <h1 className="text-3xl md:text-6xl font-regular text-white hover:scale-105 transition-transform duration-300 cursor-pointer drop-shadow-sm select-none">
+                        <Link to="/" className="text-3xl md:text-6xl font-regular text-white hover:scale-105 transition-transform duration-300 cursor-pointer drop-shadow-sm select-none">
                             ہائی پاک
-                        </h1>
+                        </Link>
                     </div>
 
                     {/* Right Section */}
