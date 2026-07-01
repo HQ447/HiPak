@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -9,13 +10,13 @@ const Navbar = () => {
     };
 
     const navLinks = [
-        { name: 'تازہ ترین', href: '#' },
-        { name: 'کالمز', href: '#' },
-        { name: 'کھیل', href: '#' },
-        { name: 'شوبز', href: '#' },
-        { name: 'بلاگز', href: '#' },
-        { name: 'ٹیکنالوجی', href: '#' },
-        { name: 'بین الاقوامی', href: '#' },
+        { name: 'تازہ ترین', href: '/category/DailyNews' },
+        { name: 'کالمز', href: '/' },
+        { name: 'کھیل', href: '/category/sports' },
+        { name: 'شوبز', href: '/category/showbiz' },
+        { name: 'بلاگز', href: '/category/entertainment' },
+        { name: 'ٹیکنالوجی', href: '/category/technology' },
+        { name: 'بین الاقوامی', href: '/category/international' },
     ];
 
     return (
@@ -75,14 +76,14 @@ const Navbar = () => {
                     <ul className="flex flex-col md:flex-row-reverse md:justify-center items-center gap-4 md:gap-14">
                         {navLinks.map((link, index) => (
                             <li key={index} className="w-full md:w-auto text-center group">
-                                <a
-                                    href={link.href}
+                                <Link
+                                    to={link.href}
                                     className="font-regular text-2xl md:text-2xl text-gray-900 md:text-white/90 hover:text-red-600 md:hover:text-red-500 transition-all duration-300 block py-1 md:py-0 relative"
                                 >
                                     {link.name}
                                     {/* Animated underline for desktop */}
                                     <span className="hidden md:block absolute -bottom-1 right-0 w-0 h-0.5 bg-red-600 transition-all duration-300 group-hover:w-full"></span>
-                                </a>
+                                </Link>
                             </li>
                         ))}
                     </ul>

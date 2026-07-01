@@ -8,6 +8,7 @@ import Analytics from './admin-dashboard-component/Analytics';
 import Contact from './user-component/Contact';
 import Home from './user-component/Home';
 import News from './user-component/News';
+import General from './user-component/General';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/news/:id" element={<News />} />
+          <Route path="/category/:categoryName" element={<General />} />
         </Route>
 
         <Route path="/login" element={<Login />} />
