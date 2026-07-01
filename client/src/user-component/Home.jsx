@@ -54,7 +54,7 @@ const Home = () => {
             <div className="dailyNews flex gap-3 justify-end flex-wrap ">
                 {DailyLatestNews.map((item) => (
                     <div key={item.id} className=' grow basis-[264px] flex flex-col gap-3' onClick={() => handleNewsClick(item.id)}>
-                        <img className='w-full  ' src="https://plus.unsplash.com/premium_photo-1690958385472-b8e011570ceb?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+                        <img className='w-full  ' src={item.img} alt="" />
                         <h1 className='font-kasheeda text-2xl md:text-2xl text-end'>{item.title}</h1>
                     </div>
                 ))}
@@ -71,7 +71,7 @@ const Home = () => {
                             <p className='text-end font-regular'>{item.date}</p>
 
                         </div>
-                        <img className='md:w-50 md:h-50 w-full h-full  ' src="https://plus.unsplash.com/premium_photo-1690958385472-b8e011570ceb?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+                        <img className='md:w-50 md:h-50 w-full h-full  ' src={item.img} alt="" />
                     </div>
                 ))}
             </div>
@@ -86,7 +86,7 @@ const Home = () => {
                             <p className='text-end font-regular'>{item.date}</p>
 
                         </div>
-                        <img className='md:w-50 md:h-50 w-full h-full  ' src="https://plus.unsplash.com/premium_photo-1690958385472-b8e011570ceb?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+                        <img className='md:w-50 md:h-50 w-full h-full  ' src={item.img} alt="" />
                     </div>
                 ))}
             </div>
@@ -94,14 +94,14 @@ const Home = () => {
 
                 <h2 className='bg-black py-3 md:py-5 px-3 text-white text-right font-kasheeda text-2xl md:text-3xl'> بین الاقوامی خبریں</h2>
                 {internationalNews.map((item) => (
-                    <div key={item.id} className=' flex flex-col flex-col-reverse md:flex-row gap-3 w-full ' onClick={() => handleNewsClick(item.id)}>
+                    <div key={item.id} className=' flex flex-col flex-col-reverse md:flex-row gap-3 w-full ' onClick={() => handleNewsClick(item.id)}   >
                         <div className="flex flex-col gap-3 w-full ">
                             <h1 className='font-kasheeda text-2xl md:text-3xl text-end'>{item.title}</h1>
                             <p className='text-end font-kasheeda text-xl line-clamp-2 text-gray-900'>{item.details}</p>
                             <p className='text-end font-regular'>{item.date}</p>
 
                         </div>
-                        <img className='md:w-50 md:h-50 w-full h-full  ' src="https://plus.unsplash.com/premium_photo-1690958385472-b8e011570ceb?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+                        <img className='md:w-50 md:h-50 w-full h-full  ' src={item.img} alt="" />
                     </div>
                 ))}
             </div>
