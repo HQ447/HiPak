@@ -7,10 +7,10 @@ function News() {
     const newsItem = news.find((item) => item.id === Number(id));
     return (
         <div className='text-right flex flex-col gap-3'>
-            <h1 className='text-4xl font-kasheeda font-bold'>{newsItem.title}</h1>
-            <p className='text-xl font-regular'>{newsItem.date}</p>
+            <h1 className='text-3xl md:text-4xl font-kasheeda font-bold'>{newsItem.title}</h1>
+            <p className='text-lg md:text-xl font-regular'>{newsItem.date}</p>
             <img src={newsItem.img} alt="" />
-            <p className='text-2xl font-regular'>{newsItem.details}</p>
+            <p className='text-lg md:text-xl font-regular'>{newsItem.details}</p>
         </div>
     )
 }
