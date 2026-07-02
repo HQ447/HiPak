@@ -11,7 +11,7 @@ const Navbar = () => {
 
     const navLinks = [
         { name: 'تازہ ترین', href: '/category/DailyNews' },
-        { name: 'کالمز', href: '/' },
+        { name: 'کالمز', href: '/columns' },
         { name: 'کھیل', href: '/category/sports' },
         { name: 'شوبز', href: '/category/showbiz' },
         { name: 'بلاگز', href: '/category/entertainment' },

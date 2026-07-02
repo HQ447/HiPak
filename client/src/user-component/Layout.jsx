@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import FloatingBar from './FloatingBar';
@@ -7,6 +7,7 @@ import columns from '../assets/data/colData.json';
 import { FaFacebookF, FaTwitter, FaWhatsapp, FaTelegramPlane, FaYoutube } from 'react-icons/fa';
 
 const Layout = () => {
+    const navigate = useNavigate();
     return (
         <div className="layout">
             <Navbar />
@@ -30,7 +31,11 @@ const Layout = () => {
                         <h1 className='font-kasheeda text-3xl md:text-4xl text-right bg-gray-200 p-5'>آج کے کالمز</h1>
 
                         {columns.map((col) => (
-                            <div key={col.id} className="col gap-4 text-xl md:text-2xl flex justify-end items-center text-right font-regular">
+                            <div
+                                key={col.id}
+                                onClick={() => navigate(`/column/${col.id}`)}
+                                className="col gap-4 text-xl md:text-2xl flex justify-end items-center text-right font-regular cursor-pointer hover:text-[#dd3333] transition-colors duration-200"
+                            >
                                 <div className='flex flex-col justify-end'>
                                     <h2 className="title">{col.title}</h2>
                                     <span className="author ">{col.author}</span>
