@@ -7,6 +7,11 @@ import Signup from './auth/Signup';
 import ResetPassword from './auth/ResetPassword';
 import AdminLayout from './admin-dashboard-component/Layout';
 import Analytics from './admin-dashboard-component/Analytics';
+import Posts from './admin-dashboard-component/Posts';
+import Categories from './admin-dashboard-component/Categories';
+import Articles from './admin-dashboard-component/Articles';
+import SiteSettings from './admin-dashboard-component/SiteSettings';
+import Profile from './admin-dashboard-component/Profile';
 import Contact from './user-component/Contact';
 import Home from './user-component/Home';
 import News from './user-component/News';
@@ -36,6 +41,11 @@ const App = () => {
 
         <Route path="/admin" element={<AdminLayout />} >
           <Route index element={<Analytics />} />
+          <Route path="posts" element={<Posts />} />
+          <Route path="categories" element={<Categories />} />
+          <Route path="articles" element={<Articles />} />
+          <Route path="settings" element={<SiteSettings />} />
+          <Route path="profile" element={<Profile />} />
         </Route>
 
       </Routes>

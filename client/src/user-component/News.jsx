@@ -5,7 +5,7 @@ import news from '../assets/data/newsData.json'
 function News() {
     const { id } = useParams();
     const newsItem = news.find((item) => item.id === Number(id));
-    const [fontSize, setFontSize] = useState(18);
+    const [fontSize, setFontSize] = useState(23);
 
     const increase = () => setFontSize(prev => Math.min(prev + 2, 28));
     const decrease = () => setFontSize(prev => Math.max(prev - 2, 14));
