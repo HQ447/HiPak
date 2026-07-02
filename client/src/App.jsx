@@ -11,6 +11,8 @@ import Contact from './user-component/Contact';
 import Home from './user-component/Home';
 import News from './user-component/News';
 import General from './user-component/General';
+import Column from './user-component/Column';
+import Columns from './user-component/Columns';
 
 const App = () => {
   return (
@@ -22,6 +24,8 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/news/:id" element={<News />} />
           <Route path="/category/:categoryName" element={<General />} />
+          <Route path="/column/:id" element={<Column />} />
+          <Route path="/columns" element={<Columns />} />
         </Route>
 
         <Route path="/login" element={<Login />} />
